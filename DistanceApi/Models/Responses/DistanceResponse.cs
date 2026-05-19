@@ -5,6 +5,9 @@
     /// </summary>
     public class DistanceResponse
     {
+        /// <summary>
+        /// Расстояние в километрах
+        /// </summary>
         public double DistanceKm { get; set; }
     }
 }
