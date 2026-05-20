@@ -1,0 +1,46 @@
+﻿@page
+@model DistanceWebApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Расчет расстояния";
+}
+
+<h1>Расчет расстояния между двумя точками</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Lat1"></label>
+        <input asp-for="Lat1" />
+        <span asp-validation-for="Lat1"></span>
+    </div>
+
+    <div>
+        <label asp-for="Lon1"></label>
+        <input asp-for="Lon1" />
+        <span asp-validation-for="Lon1"></span>
+    </div>
+
+    <div>
+        <label asp-for="Lat2"></label>
+        <input asp-for="Lat2" />
+        <span asp-validation-for="Lat2"></span>
+    </div>
+
+    <div>
+        <label asp-for="Lon2"></label>
+        <input asp-for="Lon2" />
+        <span asp-validation-for="Lon2"></span>
+    </div>
+
+    <button type="submit">Рассчитать</button>
+</form>
+
+@if (Model.DistanceKm.HasValue)
+{
+    <p><strong>Расстояние:</strong> @Model.DistanceKm.Value км</p>
+}
+
+<div asp-validation-summary="All"></div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
